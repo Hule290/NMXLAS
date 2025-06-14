@@ -13,5 +13,4 @@ output[920:1100, 420:600] = shifted
 
 plt.figure(figsize=(12, 6))
 plt.imshow(output)
-plt.axis("off")
 plt.show()
