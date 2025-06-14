@@ -38,7 +38,18 @@ elif choice == 'P':
 elif choice == 'H':
     result = nd.zoom(img, (1/5, 1/5, 1)) 
 elif choice == 'C':
-    result = img[:, ::-1]
+    H, W, C = img.shape
+    M = np.indices((H, W))
+
+    d = 5
+    q = 2 * d * np.random.rand(*M.shape) - d 
+    mp = (M + q).astype(int)
+
+    mp[0] = np.clip(mp[0], 0, H - 1)
+    mp[1] = np.clip(mp[1], 0, W - 1)
+    result = np.zeros_like(img)
+    for i in range(C):  
+        result[:, :, i] = img[mp[0], mp[1], i]
 
 plt.subplot(1, 2, 1)
 plt.title("Ảnh Gốc")
