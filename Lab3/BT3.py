@@ -2,6 +2,7 @@ import numpy as np
 import scipy.ndimage as nd
 import imageio.v2 as iio
 import matplotlib.pylab as plt
+
 data = iio.imread('exercise/quang_ninh.jpg')
 nui = data[25:330, 445:655]
 thuyen = data[455:545, 490:655]
