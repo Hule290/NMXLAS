@@ -26,23 +26,20 @@ if img_index not in [0, 1, 2]:
     print("Số ảnh không hợp lệ.")
     exit()
 
-# Đọc ảnh
 img_path = os.path.join(img_folder, image_files[img_index])
 img = iio.imread(img_path)
 
-# Thực hiện phép biến đổi
 if choice == 'T':
     result = nd.shift(img, (0, 30, 0)) 
 elif choice == 'X':
-    result = nd.rotate(img, 45, reshape=True) 
+    result = nd.rotate(img, 45, reshape=True)
+elif choice == 'P':
     result = nd.zoom(img, (5, 5, 1)) 
 elif choice == 'H':
-    result = nd.zoom(img, (5, 5, 1)) 
+    result = nd.zoom(img, (1/5, 1/5, 1)) 
 elif choice == 'C':
     result = img[:, ::-1]
 
-# Hiển thị kết quả
-plt.figure(figsize=(10, 5))
 plt.subplot(1, 2, 1)
 plt.title("Ảnh Gốc")
 plt.imshow(img)
@@ -51,5 +48,4 @@ plt.subplot(1, 2, 2)
 plt.title("Ảnh Sau Biến Đổi")
 plt.imshow(result)
 
-plt.tight_layout()
 plt.show()
