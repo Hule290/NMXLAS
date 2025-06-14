@@ -2,10 +2,11 @@ import numpy as np
 import scipy.ndimage as nd
 import imageio.v2 as iio
 import matplotlib.pylab as plt
+
 data = iio.imread('exercise/pagoda.jpg')
 chua = data[125:320, 0:570]
 
-chua_zoom = nd.zoom(chua, (5,5,1))
+chua_zoom = nd.zoom(chua, 5)
 
 plt.imsave('chua_zoom.jpg', chua_zoom)
 
