@@ -9,8 +9,8 @@ thuyen = data[455:545, 490:655]
 nui_xoay = nd.rotate(nui, 45, reshape = True)
 thuyen_xoay = nd.rotate(thuyen, 45, reshape = True)
 
-plt.imsave('nui_xoay',nui_xoay)
-plt.imsave('thuyen_xoay',thuyen_xoay)
+plt.imsave('nui_xoay.jpg',nui_xoay)
+plt.imsave('thuyen.jpg',thuyen_xoay)
 
 plt.subplot(1, 2, 1)
 plt.imshow(nui_xoay)
