@@ -1,7 +1,7 @@
 import numpy as np
 import imageio.v2 as iio
 import matplotlib.pylab as plt
-data = iio.imread('colorful-ripe-tropical-fruits.jpg')
+data = iio.imread('exercise/colorful-ripe-tropical-fruits.jpg')
 dudu = data[330:810, 125:670]
 duahau = data[315:1100, 1635:2100]
 
